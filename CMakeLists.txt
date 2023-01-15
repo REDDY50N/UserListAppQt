@@ -21,6 +21,7 @@ set(PROJECT_SOURCES
         mainwindow.ui
         user.h user.cpp
         shareddata.h shareddata.cpp
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
