@@ -27,7 +27,6 @@ private:
     QString m_firstName;
     QString m_lastName;
     QDate m_dateOfBirth;
-
 };
 
 #endif // USER_H

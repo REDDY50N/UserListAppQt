@@ -10,7 +10,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Daten für TableView:
-    // ui->tableView->setModel();
+    // enthät die Tabellendaten, die aus der Datenstruktur User angelegt wurden
+
+
+    // this = damit, wenn MainWindow gelöscht wird, auch das Model gelöscht wird
+    m_userlistmodel = new UserListModel(SharedData::instance()->users(), this );
+    ui->tableView->setModel(m_userlistmodel);
 
     // Instanz des SharedData Singleton erstellen;
     // beim Aufruf dieser Methode bekomme ich immer dasselbe Objekt = Singleton

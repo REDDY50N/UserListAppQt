@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "userlistmodel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,5 +18,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    // Attribut für Model aus "userlistmodel.h"
+    // damit wir die Tabelle hier mit dem Model ( setModel() ) verknüpfen können
+    UserListModel* m_userlistmodel;
 };
 #endif // MAINWINDOW_H

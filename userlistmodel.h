@@ -11,21 +11,26 @@ class UserListModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
-    // Das Model benötigt unsere Daten, deswegen geben wir dem Model
-    // eine Liste auf die User
+    //! CTOR
+    //! Das Model benötigt unsere Daten, deswegen geben wir dem Model
+    //! eine Liste auf die User
     explicit UserListModel(QList<User>* users, QObject *parent = nullptr);
 
-    // Header:
+    //! Index - Wofür?
+    QModelIndex index(int row, int column,
+                              const QModelIndex &parent = QModelIndex()) const override;
+
+    //! Index Parent - wofür?
+    QModelIndex parent(const QModelIndex &child) const override;
+
+    //! Kopfzeile
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
 
-    // Basic functionality:
-    QModelIndex index(int row, int column,
-                      const QModelIndex &parent = QModelIndex()) const override;
-    QModelIndex parent(const QModelIndex &index) const override;
-
+    //! Zeilen- / Spaltenanzahl
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
+    //! Daten
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 private:
