@@ -6,6 +6,8 @@
  *  und wird als Singleton implementiert.
  */
 
+#include <QList>
+#include "user.h"
 
 class SharedData
 {
@@ -17,6 +19,15 @@ private:
 // die eine geteilte Instanz zurückgibt
 public:
     static SharedData* instance();
+
+
+public:
+    // öffentlichen Getter, der die private Liste unten zurückgibt
+    QList<User>* users();
+
+private:
+    // privates Attribut mit einer Liste von Nutzern
+    QList<User> m_users;
 };
 
 #endif // SHAREDDATA_H

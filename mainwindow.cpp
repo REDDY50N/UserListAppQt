@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Instanz des SharedData Singleton erstellen;
     // beim Aufruf dieser Methode bekomme ich immer dasselbe Objekt = Singleton
-    SharedData::instance();
+    SharedData::instance()->users();
 }
 
 MainWindow::~MainWindow()
